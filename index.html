@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Suprabath Chadalavada — Operations & Industry 4.0</title>
+  <meta name="description" content="Sai Suprabath Chadalavada — Operational Excellence, Industry 4.0 & Program Management. Pharma GMP + smart-manufacturing + Northwestern MEM." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Grain / texture overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Floating playful shapes -->
+  <div class="blobs" aria-hidden="true">
+    <span class="blob blob--coral"></span>
+    <span class="blob blob--teal"></span>
+    <span class="blob blob--yellow"></span>
+  </div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="nav__brand">
+      <span class="nav__dot"></span> SSC<span class="nav__brand-x">/</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#stats">Impact</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#dashboards">Dashboards</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="nav__cta">Say hi</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO / ABOUT ============ -->
+    <section class="hero" id="about">
+      <div class="hero__tag reveal">
+        <span class="ping"></span> Open to roles · Graduating Dec 2026
+      </div>
+
+      <h1 class="hero__title reveal">
+        Hi, I'm <span class="hl hl--coral">Sai</span>.<br />
+        I turn messy operations into<br />
+        <span class="hl hl--teal">measurable wins.</span>
+      </h1>
+
+      <p class="hero__lede reveal">
+        Operational Excellence &amp; Industry 4.0 program manager with 3+ years driving
+        <strong>$50M+</strong> of manufacturing impact at Dr.&nbsp;Reddy's Laboratories — now finishing a
+        <strong>Master of Engineering Management at Northwestern</strong>. I live where pharma GMP,
+        smart manufacturing, and data meet.
+      </p>
+
+      <div class="hero__cta reveal">
+        <!-- TODO: add your resume PDF to the repo root and keep this filename, or update the href -->
+        <a class="btn btn--primary" href="Sai_Suprabath_Chadalavada_Resume.pdf" download>
+          ↓ Download résumé
+        </a>
+        <a class="btn btn--ghost" href="#contact">Get in touch</a>
+      </div>
+
+      <div class="hero__socials reveal">
+        <a href="https://www.linkedin.com/in/suprabathcs" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <!-- TODO: replace with your Substack URL -->
+        <a href="#" data-todo="substack" target="_blank" rel="noopener">Substack ↗</a>
+        <!-- TODO: replace with your GitHub URL -->
+        <a href="#" data-todo="github" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="mailto:saichadalavada2027@u.northwestern.edu">Email ↗</a>
+      </div>
+    </section>
+
+    <!-- ============ STATS / IMPACT ============ -->
+    <section class="stats" id="stats">
+      <h2 class="section-eyebrow">The numbers I'm proud of</h2>
+      <div class="stats__grid">
+        <div class="stat reveal">
+          <span class="stat__num" data-target="3" data-prefix="$" data-suffix="M">$0M</span>
+          <span class="stat__label">OPEX reduction targeted via Lean Autonomation</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-target="90" data-suffix="%">0%</span>
+          <span class="stat__label">Defect-rate reduction (1.78% → 0.17%) on a critical line</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-target="500" data-suffix="K">0K</span>
+          <span class="stat__label">Manual touchpoints eliminated via MES-HVAC RPA</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-target="53" data-suffix="K">0K</span>
+          <span class="stat__label">FTE effort-hours saved &amp; delivered</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-target="99" data-suffix="%">0%</span>
+          <span class="stat__label">Schedule adherence on a $12M capex program</span>
+        </div>
+        <div class="stat reveal">
+          <span class="stat__num" data-target="50" data-suffix="%">0%</span>
+          <span class="stat__label">Production-capacity increase across 20 SKUs</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE & EDUCATION ============ -->
+    <section class="experience" id="experience">
+      <h2 class="section-title">Where I've <span class="hl hl--coral">been</span></h2>
+
+      <div class="timeline">
+        <article class="tl-item reveal">
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__meta">
+            <span class="tl-item__date">Aug 2023 – Aug 2025</span>
+            <span class="tl-item__tag tag--work">Work</span>
+          </div>
+          <h3>Operations Program Manager</h3>
+          <p class="tl-item__org">Dr. Reddy's Laboratories · India</p>
+          <ul>
+            <li>Coordinated a 19-idea Lean Autonomation program — on track for <strong>380K effort-hour savings</strong> and <strong>$3M OPEX reduction</strong>.</li>
+            <li>Ran the ZERO_BAD TPM initiative (5S, HIRA, FMEA, centerlining) → <strong>90% defect-rate reduction</strong>, zero safety incidents.</li>
+            <li>Spearheaded Industry 4.0 digitization — RPA + QR DigiLabel — <strong>$100K+ savings</strong>, zero GMP audit findings across 6 sites.</li>
+            <li>Owned a <strong>$12M capex</strong> equipment install across 20 SKUs at 99% schedule adherence.</li>
+          </ul>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__meta">
+            <span class="tl-item__date">Aug 2022 – Jul 2023</span>
+            <span class="tl-item__tag tag--work">Work</span>
+          </div>
+          <h3>Technical Trainee — ACE Leadership Program</h3>
+          <p class="tl-item__org">Dr. Reddy's Laboratories · India</p>
+          <ul>
+            <li>Implemented a digital energy monitoring system (708 meters, 22 flow devices) → <strong>8% utility reduction</strong>, contributing to ISO 50001:2018.</li>
+            <li>Ran VSM and process analysis cutting cycle time — saving <strong>15 operational days a year</strong>.</li>
+          </ul>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__meta">
+            <span class="tl-item__date">Sept 2025 – Dec 2026</span>
+            <span class="tl-item__tag tag--edu">Education</span>
+          </div>
+          <h3>Master of Engineering Management</h3>
+          <p class="tl-item__org">Northwestern University · Evanston, IL · GPA 3.8</p>
+          <ul>
+            <li>Operations, Supply Chain &amp; Project Management focus. TA for Project Management and Marketing Analytics.</li>
+            <li>Coursework: AI in Manufacturing, Machine Learning, Applied Statistics, Product Management.</li>
+          </ul>
+        </article>
+
+        <article class="tl-item reveal">
+          <div class="tl-item__dot"></div>
+          <div class="tl-item__meta">
+            <span class="tl-item__date">Aug 2018 – May 2022</span>
+            <span class="tl-item__tag tag--edu">Education</span>
+          </div>
+          <h3>B.Tech, Mechanical Engineering</h3>
+          <p class="tl-item__org">Birla Institute of Technology, Mesra · India · GPA 3.6</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="projects" id="projects">
+      <h2 class="section-title">Things I've <span class="hl hl--teal">built</span></h2>
+
+      <div class="proj-grid">
+        <article class="proj tilt reveal">
+          <div class="proj__top">
+            <span class="proj__kicker">Multi-agent AI</span>
+            <span class="proj__arrow">↗</span>
+          </div>
+          <h3>NexusLogisticsAI</h3>
+          <p>A multi-agent supply-chain intelligence system that predicts real-time shipment ETAs from weather, port congestion, geopolitical and supplier signals — surfacing early risk alerts with confidence-based predictions.</p>
+          <div class="proj__tags">
+            <span>Agentic AI</span><span>Supply Chain</span><span>Risk</span>
+          </div>
+        </article>
+
+        <article class="proj tilt reveal">
+          <div class="proj__top">
+            <span class="proj__kicker">Product · Energy</span>
+            <span class="proj__arrow">↗</span>
+          </div>
+          <h3>ArkaEase</h3>
+          <p>An AI-powered energy-automation platform with dynamic pricing. Owned product definition end-to-end — MRD/PRD, user research, unit economics (LTV:CAC 12.8:1) and GTM strategy.</p>
+          <div class="proj__tags">
+            <span>Product</span><span>GTM</span><span>Energy</span>
+          </div>
+        </article>
+
+        <article class="proj tilt reveal">
+          <div class="proj__top">
+            <span class="proj__kicker">ML · Manufacturing</span>
+            <span class="proj__arrow">↗</span>
+          </div>
+          <h3>Golden Tunnel Model</h3>
+          <p>Ensemble ML (XGBoost, Boruta, Random Forest) predicting outcomes for high-throughput molecules at <strong>99.43% accuracy</strong> — bridging data science and the shop floor.</p>
+          <div class="proj__tags">
+            <span>XGBoost</span><span>Predictive</span><span>Pharma</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ DASHBOARDS ============ -->
+    <section class="dashboards" id="dashboards">
+      <div class="dash__head">
+        <h2 class="section-title">Dashboards I <span class="hl hl--coral">live in</span></h2>
+        <p class="dash__sub">
+          KPI cockpits for plant visibility, OEE, and RCA. Built in Power BI, SQL &amp; Excel.
+          <em>Swap these previews with screenshots or embeds of your live dashboards.</em>
+        </p>
+      </div>
+
+      <div class="dash-grid">
+        <!-- Card 1: OEE -->
+        <article class="dash-card reveal">
+          <header class="dash-card__bar">
+            <span>Plant Visibility · OEE</span><span class="dash-card__live">● live</span>
+          </header>
+          <div class="dash-card__body">
+            <div class="gauge" data-value="86">
+              <svg viewBox="0 0 120 70">
+                <path class="gauge__track" d="M10 65 A50 50 0 0 1 110 65" />
+                <path class="gauge__fill" d="M10 65 A50 50 0 0 1 110 65" />
+              </svg>
+              <span class="gauge__num">0%</span>
+              <span class="gauge__cap">OEE</span>
+            </div>
+            <div class="bars">
+              <span style="--h:60%"></span><span style="--h:80%"></span>
+              <span style="--h:45%"></span><span style="--h:90%"></span>
+              <span style="--h:70%"></span><span style="--h:100%"></span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: RCA -->
+        <article class="dash-card reveal">
+          <header class="dash-card__bar">
+            <span>7-Step RCA Ladder</span><span class="dash-card__live">● live</span>
+          </header>
+          <div class="dash-card__body dash-card__body--col">
+            <div class="kpi-row">
+              <div class="kpi"><b>20%</b><small>Plan vs Actual ↑</small></div>
+              <div class="kpi"><b>100%</b><small>RCA complete</small></div>
+            </div>
+            <div class="line-chart">
+              <svg viewBox="0 0 200 70" preserveAspectRatio="none">
+                <polyline class="line-chart__line" points="0,55 33,48 66,52 100,30 133,34 166,18 200,10" />
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Energy -->
+        <article class="dash-card reveal">
+          <header class="dash-card__bar">
+            <span>Energy Monitoring</span><span class="dash-card__live">● live</span>
+          </header>
+          <div class="dash-card__body dash-card__body--col">
+            <div class="kpi-row">
+              <div class="kpi"><b>708</b><small>meters</small></div>
+              <div class="kpi"><b>8%</b><small>utility ↓</small></div>
+              <div class="kpi"><b>22</b><small>flow devices</small></div>
+            </div>
+            <div class="donut" data-value="92">
+              <svg viewBox="0 0 80 80">
+                <circle class="donut__track" cx="40" cy="40" r="32" />
+                <circle class="donut__fill" cx="40" cy="40" r="32" />
+              </svg>
+              <span class="donut__num">0%</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="skills" id="skills">
+      <h2 class="section-title">My <span class="hl hl--teal">toolkit</span></h2>
+
+      <div class="skills__cols">
+        <div class="skill-col reveal">
+          <h3>Operating systems <span>(the human kind)</span></h3>
+          <div class="chips">
+            <span>Lean Six Sigma (GB)</span><span>DMAIC</span><span>TPM</span><span>5S</span>
+            <span>VSM</span><span>Kaizen</span><span>ECRS</span><span>FMEA / PFMEA</span>
+            <span>Vertical Start-Up</span><span>SMED</span><span>Design Thinking</span>
+          </div>
+        </div>
+
+        <div class="skill-col reveal">
+          <h3>Program &amp; product</h3>
+          <div class="chips">
+            <span>Program Management</span><span>Capital Projects</span><span>ROI Modeling</span>
+            <span>Capacity Planning</span><span>Stakeholder Alignment</span><span>MRD / PRD</span>
+            <span>User Research</span><span>GTM Strategy</span><span>Unit Economics</span>
+          </div>
+        </div>
+
+        <div class="skill-col reveal">
+          <h3>Tools &amp; data</h3>
+          <div class="chips">
+            <span>Power BI</span><span>Tableau</span><span>SQL</span><span>Python</span>
+            <span>Advanced Excel / VBA</span><span>Minitab</span><span>MS Project</span>
+            <span>Jira</span><span>Smartsheet</span><span>AutoCAD</span><span>Agentic AI</span>
+          </div>
+        </div>
+
+        <div class="skill-col reveal">
+          <h3>Domains</h3>
+          <div class="chips">
+            <span>GMP Manufacturing</span><span>FDA-Regulated</span><span>Industry 4.0</span>
+            <span>Supply Chain</span><span>Predictive Analytics</span><span>Energy / ISO 50001</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="certs reveal">
+        <span class="certs__label">Certifications</span>
+        <span>LSS Green Belt</span><span>RPA — Blue Prism</span><span>ML — Stanford/Coursera</span>
+        <span>PM — Google</span><span>Product — IIBA</span><span class="certs__prog">PMP (in progress · Oct 2026)</span>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="contact__inner">
+        <div class="contact__copy">
+          <h2 class="section-title">Let's <span class="hl hl--coral">talk</span></h2>
+          <p>Hiring for ops excellence, Industry 4.0, or program management? Or just want to nerd out about lean and AI? Drop a note.</p>
+          <a class="contact__email" href="mailto:saichadalavada2027@u.northwestern.edu">saichadalavada2027@u.northwestern.edu</a>
+          <p class="contact__loc">📍 Chicago, IL · open to relocation</p>
+        </div>
+
+        <!-- TODO: create a free form at https://formspree.io, then paste your endpoint below -->
+        <form class="contact__form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@company.com" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required placeholder="What's on your mind?"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--full">Send it →</button>
+          <p class="form-status" id="formStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <span>© <span id="year"></span> Sai Suprabath Chadalavada</span>
+    <div class="footer__links">
+      <a href="https://www.linkedin.com/in/suprabathcs" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" data-todo="substack" target="_blank" rel="noopener">Substack</a>
+      <a href="#" data-todo="github" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <span class="footer__made">Built with too much coffee ☕</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
