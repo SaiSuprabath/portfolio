@@ -31,6 +31,7 @@
     </a>
     <nav class="nav__links" id="navLinks">
       <a href="#about">About</a>
+      <a href="#reading">Reading</a>
       <a href="#stats">Impact</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
@@ -79,6 +80,18 @@
         <!-- TODO: replace with your GitHub URL -->
         <a href="#" data-todo="github" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="mailto:saichadalavada2027@u.northwestern.edu">Email ↗</a>
+      </div>
+    </section>
+
+    <!-- ============ READING SHELF ============ -->
+    <section class="reading" id="reading">
+      <div class="reading__head">
+        <h2 class="section-eyebrow">📚 Learning in public</h2>
+        <p class="reading__sub">Books &amp; articles I'm reading, with a line on why they stuck. <span id="readingCount"></span></p>
+      </div>
+      <!-- Cards are rendered from reading.js — edit that file to add entries. -->
+      <div class="shelf" id="shelf" aria-label="Reading list, newest first">
+        <p class="shelf__empty" id="shelfEmpty">No entries yet — add some in <code>reading.js</code>.</p>
       </div>
     </section>
 
@@ -222,11 +235,83 @@
       <div class="dash__head">
         <h2 class="section-title">Dashboards I <span class="hl hl--coral">live in</span></h2>
         <p class="dash__sub">
-          KPI cockpits for plant visibility, OEE, and RCA. Built in Power BI, SQL &amp; Excel.
-          <em>Swap these previews with screenshots or embeds of your live dashboards.</em>
+          KPI cockpits for plant visibility, OEE, and RCA — built in Power BI, SQL &amp; Excel.
+          The featured cockpit below is an <em>anonymized, representative</em> consulting case.
         </p>
       </div>
 
+      <!-- Flagship: Streamliners Consulting cockpit (anonymized / representative) -->
+      <article class="flagship dash-card reveal">
+        <header class="flagship__bar">
+          <div class="flagship__title">
+            <span class="flagship__brand">Streamliners Consulting</span>
+            <span class="flagship__name">Operations Improvement Cockpit</span>
+          </div>
+          <div class="flagship__meta">
+            <span class="flagship__client">Client: Global Pharma Manufacturer</span>
+            <span class="flagship__safe">anonymized · representative</span>
+          </div>
+        </header>
+
+        <div class="flagship__kpis">
+          <div class="fk"><b class="count" data-target="86" data-suffix="%">0%</b><small>OEE (↑ from 71%)</small></div>
+          <div class="fk"><b class="count" data-target="88" data-suffix="%">0%</b><small>Defect rate ↓</small></div>
+          <div class="fk"><b class="count" data-target="50" data-suffix="K+">0K+</b><small>Effort hours saved</small></div>
+          <div class="fk"><b class="count" data-target="99" data-suffix="%">0%</b><small>Schedule adherence</small></div>
+        </div>
+
+        <div class="flagship__panels">
+          <!-- OEE gauge -->
+          <div class="fpanel">
+            <span class="fpanel__cap">Overall Equipment Effectiveness</span>
+            <div class="gauge" data-value="86">
+              <svg viewBox="0 0 120 70">
+                <path class="gauge__track" d="M10 65 A50 50 0 0 1 110 65" />
+                <path class="gauge__fill" d="M10 65 A50 50 0 0 1 110 65" />
+              </svg>
+              <span class="gauge__num">0%</span>
+              <span class="gauge__cap">OEE</span>
+            </div>
+          </div>
+
+          <!-- Defect trend -->
+          <div class="fpanel">
+            <span class="fpanel__cap">Defect rate — 12-week trend</span>
+            <div class="line-chart">
+              <svg viewBox="0 0 200 80" preserveAspectRatio="none">
+                <polyline class="line-chart__line" points="0,12 18,18 40,15 70,34 95,40 120,55 150,60 175,68 200,72" />
+              </svg>
+            </div>
+            <span class="fpanel__note">1.8% → 0.2% over the engagement</span>
+          </div>
+
+          <!-- RPA savings bars -->
+          <div class="fpanel">
+            <span class="fpanel__cap">Automation savings by workstream</span>
+            <div class="bars">
+              <span style="--h:50%"></span><span style="--h:72%"></span>
+              <span style="--h:38%"></span><span style="--h:88%"></span>
+              <span style="--h:64%"></span><span style="--h:100%"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RCA 7-step ladder -->
+        <div class="ladder" data-done="7">
+          <span class="ladder__cap">7-Step RCA Ladder · closure</span>
+          <div class="ladder__steps">
+            <span data-step="1">Define</span>
+            <span data-step="2">Measure</span>
+            <span data-step="3">Contain</span>
+            <span data-step="4">Root cause</span>
+            <span data-step="5">Corrective</span>
+            <span data-step="6">Verify</span>
+            <span data-step="7">Sustain</span>
+          </div>
+        </div>
+      </article>
+
+      <p class="dash__minihead">Other cockpits I've built</p>
       <div class="dash-grid">
         <!-- Card 1: OEE -->
         <article class="dash-card reveal">
@@ -381,6 +466,7 @@
     <span class="footer__made">Built with too much coffee ☕</span>
   </footer>
 
+  <script src="reading.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

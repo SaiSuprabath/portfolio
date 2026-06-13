@@ -35,11 +35,8 @@
         var el = entry.target;
         el.classList.add("is-in");
 
-        if (el.querySelector && el.querySelector(".stat__num")) {
-          /* stat tile */
-        }
-        // count up numbers inside this element
-        el.querySelectorAll && el.querySelectorAll(".stat__num").forEach(animateNumber);
+        // count up numbers inside this element (stat tiles + flagship KPIs)
+        el.querySelectorAll && el.querySelectorAll(".stat__num, .count").forEach(animateNumber);
 
         // dashboard widgets
         if (el.classList.contains("dash-card")) animateDashboard(el);
@@ -53,7 +50,7 @@
   document.querySelectorAll(".reveal, .dash-card").forEach(function (el) {
     if (reduceMotion) {
       el.classList.add("is-in");
-      el.querySelectorAll && el.querySelectorAll(".stat__num").forEach(function (n) { setFinal(n); });
+      el.querySelectorAll && el.querySelectorAll(".stat__num, .count").forEach(function (n) { setFinal(n); });
       if (el.classList.contains("dash-card")) animateDashboard(el, true);
     } else {
       io.observe(el);
@@ -111,6 +108,20 @@
       var dnum = donut.querySelector(".donut__num");
       if (dfill) dfill.style.strokeDashoffset = 201 - (201 * dv) / 100;
       if (dnum) instant ? (dnum.textContent = dv + "%") : countText(dnum, dv, "%");
+    }
+
+    // RCA 7-step ladder — light up steps up to data-done, staggered
+    var ladder = card.querySelector(".ladder");
+    if (ladder) {
+      ladder.classList.add("is-in");
+      var done = parseInt(ladder.getAttribute("data-done"), 10) || 0;
+      var steps = ladder.querySelectorAll(".ladder__steps span");
+      steps.forEach(function (s, i) {
+        if (i < done) {
+          if (instant) { s.classList.add("done"); }
+          else { setTimeout(function () { s.classList.add("done"); }, 250 + i * 130); }
+        }
+      });
     }
   }
 
@@ -220,4 +231,61 @@
       }
     });
   });
+  /* ---- Render reading shelf from window.READING ---- */
+  (function renderShelf() {
+    var shelf = document.getElementById("shelf");
+    var empty = document.getElementById("shelfEmpty");
+    var countEl = document.getElementById("readingCount");
+    var list = (window.READING || []).slice();
+    if (!shelf) return;
+
+    if (!list.length) { return; } // keep the empty-state message
+
+    if (empty) empty.remove();
+
+    // newest first
+    list.sort(function (a, b) {
+      return new Date(b.date || 0) - new Date(a.date || 0);
+    });
+
+    var frag = document.createDocumentFragment();
+    list.forEach(function (item) {
+      var type = item.type === "article" ? "article" : "book";
+      var card = document.createElement("article");
+      card.className = "read-card";
+
+      var dateStr = "";
+      if (item.date) {
+        var d = new Date(item.date);
+        if (!isNaN(d)) dateStr = d.toLocaleDateString(undefined, { month: "short", year: "numeric" });
+      }
+
+      var linkHtml = item.link
+        ? '<a class="read-card__link" href="' + escapeAttr(item.link) + '" target="_blank" rel="noopener">read it ↗</a>'
+        : "";
+
+      card.innerHTML =
+        '<div class="read-card__top">' +
+          '<span class="read-card__type read-card__type--' + type + '">' + (type === "book" ? "📖 book" : "📰 article") + "</span>" +
+          '<span class="read-card__date">' + esc(dateStr) + "</span>" +
+        "</div>" +
+        '<h3 class="read-card__title">' + esc(item.title || "Untitled") + "</h3>" +
+        '<span class="read-card__author">' + esc(item.author || "") + "</span>" +
+        '<p class="read-card__note">' + esc(item.note || "") + "</p>" +
+        linkHtml;
+
+      frag.appendChild(card);
+    });
+    shelf.appendChild(frag);
+
+    if (countEl) countEl.textContent = "· " + list.length + " logged";
+  })();
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function escAttr(s) { return esc(s).replace(/"/g, "&quot;"); }
+  // alias used above
+  function escapeAttr(s) { return escAttr(s); }
 })();
