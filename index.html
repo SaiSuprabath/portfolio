@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://saisuprabath.com/" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sai Suprabath Chadalavada — Operations & Industry 4.0</title>
   <meta name="description" content="Sai Suprabath Chadalavada — Operational Excellence, Industry 4.0 & Program Management. Pharma GMP + smart-manufacturing + Northwestern MEM." />
@@ -76,9 +79,8 @@
       <div class="hero__socials reveal">
         <a href="https://www.linkedin.com/in/suprabathcs" target="_blank" rel="noopener">LinkedIn ↗</a>
         <!-- TODO: replace with your Substack URL -->
-        <a href="#" data-todo="substack" target="_blank" rel="noopener">Substack ↗</a>
         <!-- TODO: replace with your GitHub URL -->
-        <a href="#" data-todo="github" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://github.com/SaiSuprabath" target="_blank" rel="noopener">GitHub ↗</a>
         <a href="mailto:saichadalavada2027@u.northwestern.edu">Email ↗</a>
       </div>
     </section>
@@ -434,23 +436,12 @@
           <p class="contact__loc">📍 Chicago, IL · open to relocation</p>
         </div>
 
-        <!-- TODO: create a free form at https://formspree.io, then paste your endpoint below -->
-        <form class="contact__form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your name" />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="you@company.com" />
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required placeholder="What's on your mind?"></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary btn--full">Send it →</button>
-          <p class="form-status" id="formStatus" role="status"></p>
-        </form>
+        <div class="contact__form contact__card">
+          <p class="contact__card-title">Fastest way to reach me</p>
+          <p>Email lands straight in my inbox. I usually reply within a day or two.</p>
+          <a class="btn btn--primary btn--full" href="mailto:saichadalavada2027@u.northwestern.edu?subject=Hello%20from%20your%20portfolio">Email me →</a>
+          <a class="btn btn--full contact__alt" href="https://www.linkedin.com/in/suprabathcs" target="_blank" rel="noopener">Message on LinkedIn ↗</a>
+        </div>
       </div>
     </section>
   </main>
@@ -460,8 +451,7 @@
     <span>© <span id="year"></span> Sai Suprabath Chadalavada</span>
     <div class="footer__links">
       <a href="https://www.linkedin.com/in/suprabathcs" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="#" data-todo="substack" target="_blank" rel="noopener">Substack</a>
-      <a href="#" data-todo="github" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/SaiSuprabath" target="_blank" rel="noopener">GitHub</a>
     </div>
     <span class="footer__made">Built with too much coffee ☕</span>
   </footer>

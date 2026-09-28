@@ -172,65 +172,6 @@
   );
   sections.forEach(function (s) { navIO.observe(s); });
 
-  /* ---- Contact form (Formspree-friendly, graceful fallback) ---- */
-  var form = document.getElementById("contactForm");
-  var status = document.getElementById("formStatus");
-
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      var action = form.getAttribute("action") || "";
-
-      // Not configured yet → fall back to opening the user's mail client.
-      if (action.indexOf("YOUR_FORM_ID") !== -1 || action.indexOf("formspree.io/f/") === -1) {
-        e.preventDefault();
-        var name = (form.name && form.name.value) || "";
-        var email = (form.email && form.email.value) || "";
-        var msg = (form.message && form.message.value) || "";
-        var body = encodeURIComponent("From: " + name + " (" + email + ")\n\n" + msg);
-        var subject = encodeURIComponent("Portfolio message from " + name);
-        window.location.href =
-          "mailto:saichadalavada2027@u.northwestern.edu?subject=" + subject + "&body=" + body;
-        setStatus("Opening your email app… (set up Formspree for in-page sending)", "ok");
-        return;
-      }
-
-      // Configured → submit via fetch for a smooth in-page experience.
-      e.preventDefault();
-      setStatus("Sending…", "ok");
-      fetch(action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
-      })
-        .then(function (res) {
-          if (res.ok) {
-            form.reset();
-            setStatus("Thanks! Your message is on its way. ✓", "ok");
-          } else {
-            setStatus("Hmm, something went wrong. Try emailing me directly.", "err");
-          }
-        })
-        .catch(function () {
-          setStatus("Network error. Try emailing me directly.", "err");
-        });
-    });
-  }
-
-  function setStatus(text, type) {
-    if (!status) return;
-    status.textContent = text;
-    status.className = "form-status " + (type || "");
-  }
-
-  /* ---- Friendly nudge for un-set placeholder links ---- */
-  document.querySelectorAll('a[data-todo]').forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      if (a.getAttribute("href") === "#") {
-        e.preventDefault();
-        alert("Add your " + a.getAttribute("data-todo") + " link in index.html (search for data-todo=\"" + a.getAttribute("data-todo") + "\").");
-      }
-    });
-  });
   /* ---- Render reading shelf from window.READING ---- */
   (function renderShelf() {
     var shelf = document.getElementById("shelf");
